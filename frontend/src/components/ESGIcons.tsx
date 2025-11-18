@@ -15,7 +15,16 @@ export const ESGIcon: React.FC<ESGIconProps> = ({ iconUrl, alt, size = 64, class
       width={size} 
       height={size} 
       className={className}
-      style={{ filter: 'drop-shadow(0 2px 4px rgba(34, 197, 94, 0.2))' }}
+      style={{ 
+        filter: 'drop-shadow(0 4px 8px rgba(245, 158, 11, 0.4)) brightness(1.1)',
+        transition: 'transform 300ms ease'
+      }}
+      onMouseEnter={(e) => {
+        e.currentTarget.style.transform = 'scale(1.1)';
+      }}
+      onMouseLeave={(e) => {
+        e.currentTarget.style.transform = 'scale(1)';
+      }}
     />
   );
 };
@@ -47,9 +56,32 @@ export const ESGIconSet: React.FC = () => {
   return (
     <div style={{ display: 'flex', gap: '24px', justifyContent: 'center', flexWrap: 'wrap', alignItems: 'center' }}>
       {icons.map((icon, index) => (
-        <div key={index} style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
-          <ESGIcon iconUrl={icon.url} alt={icon.alt} size={48} />
-          <span style={{ fontSize: '0.875rem', color: '#059669', fontWeight: 500 }}>{icon.label}</span>
+        <div key={index} style={{ 
+          textAlign: 'center', 
+          display: 'flex', 
+          flexDirection: 'column', 
+          alignItems: 'center', 
+          gap: '8px',
+          padding: '16px',
+          background: 'rgba(15, 26, 19, 0.4)',
+          borderRadius: '12px',
+          border: '1px solid rgba(245, 158, 11, 0.2)',
+          backdropFilter: 'blur(10px)',
+          transition: 'all 300ms ease'
+        }}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.transform = 'translateY(-4px)';
+          e.currentTarget.style.borderColor = 'rgba(245, 158, 11, 0.4)';
+          e.currentTarget.style.boxShadow = '0 8px 20px rgba(245, 158, 11, 0.2)';
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.transform = 'translateY(0)';
+          e.currentTarget.style.borderColor = 'rgba(245, 158, 11, 0.2)';
+          e.currentTarget.style.boxShadow = 'none';
+        }}
+        >
+          <ESGIcon iconUrl={icon.url} alt={icon.alt} size={64} />
+          <span style={{ fontSize: '0.875rem', color: '#f59e0b', fontWeight: 600 }}>{icon.label}</span>
         </div>
       ))}
     </div>

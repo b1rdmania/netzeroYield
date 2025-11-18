@@ -51,17 +51,21 @@ export const LandingPage: React.FC = () => {
             position: 'sticky',
             top: 0,
             zIndex: 30,
-            backgroundColor: '#065f46',
-            color: 'white',
-            padding: '0.5rem 0',
+            backgroundColor: 'rgba(2, 44, 34, 0.95)',
+            backdropFilter: 'blur(20px)',
+            color: '#f59e0b',
+            padding: '0.75rem 0',
             textAlign: 'center',
-            fontSize: '0.875rem'
+            fontSize: '0.875rem',
+            fontWeight: 600,
+            borderBottom: '1px solid rgba(245, 158, 11, 0.2)',
+            boxShadow: '0 4px 20px rgba(0, 0, 0, 0.3)'
           }}
         >
           <span style={{ margin: '0 0.5rem' }}>🌱 Net-Zero Carbon</span>
-          <span style={{ margin: '0 0.5rem' }}>|</span>
+          <span style={{ margin: '0 0.5rem', color: 'rgba(245, 158, 11, 0.5)' }}>|</span>
           <span style={{ margin: '0 0.5rem' }}>🔒 Accredited Investors</span>
-          <span style={{ margin: '0 0.5rem' }}>|</span>
+          <span style={{ margin: '0 0.5rem', color: 'rgba(245, 158, 11, 0.5)' }}>|</span>
           <span style={{ margin: '0 0.5rem' }}>💚 ESG-Compliant Yield</span>
         </motion.div>
       )}
@@ -161,11 +165,11 @@ export const LandingPage: React.FC = () => {
         </section>
 
         {/* How It Works */}
-        <section className="stepper-section" style={{ color: '#1a1a1a', backgroundColor: 'white' }}>
+        <section className="stepper-section">
           <div className="container">
             <motion.h2 
               className="section-title"
-              style={{ color: '#065f46', marginBottom: '48px' }}
+              style={{ marginBottom: '48px' }}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -221,11 +225,10 @@ export const LandingPage: React.FC = () => {
         </section>
 
         {/* Key Benefits */}
-        <section className="benefits-section-modern" style={{ color: '#1a1a1a', backgroundColor: '#f8fafc' }}>
+        <section className="benefits-section-modern">
           <div className="container">
             <motion.h2 
               className="section-title"
-              style={{ color: '#065f46' }}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -264,11 +267,10 @@ export const LandingPage: React.FC = () => {
         </section>
 
         {/* Why Rayls */}
-        <section className="why-sonic-modern" style={{ color: '#1a1a1a' }}>
+        <section className="why-sonic-modern">
           <div className="container">
             <motion.h2 
               className="section-title"
-              style={{ color: '#065f46' }}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -312,11 +314,10 @@ export const LandingPage: React.FC = () => {
         </section>
 
         {/* FAQ */}
-        <section className="faq-section-modern" style={{ color: '#1a1a1a' }}>
+        <section className="faq-section-modern">
           <div className="container">
             <motion.h2 
               className="section-title"
-              style={{ color: '#065f46' }}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
