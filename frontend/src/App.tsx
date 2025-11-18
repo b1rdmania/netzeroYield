@@ -10,11 +10,14 @@ import { Toaster } from 'react-hot-toast';
 
 import '@rainbow-me/rainbowkit/styles.css';
 
-const projectId = import.meta.env.VITE_PROJECT_ID;
+const projectId = import.meta.env.VITE_PROJECT_ID || 'default-project-id';
 
-if (!projectId) {
-  throw new Error("VITE_PROJECT_ID is not set. Please add it to your .env file or Vercel project settings.");
-}
+// Create wallets config with fallback
+const { wallets } = getDefaultWallets({
+  appName: 'NetZero Yield',
+  projectId: projectId,
+  chains: [raylsDevnet],
+});
 
 const config = createConfig({
   chains: [raylsDevnet],
@@ -22,6 +25,7 @@ const config = createConfig({
     [raylsDevnet.id]: http(),
   },
   ssr: true,
+  connectors: wallets.map((w) => w.connector),
 });
 
 const queryClient = new QueryClient();
