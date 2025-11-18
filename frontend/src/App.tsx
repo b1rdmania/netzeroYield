@@ -12,12 +12,19 @@ import '@rainbow-me/rainbowkit/styles.css';
 
 const projectId = import.meta.env.VITE_PROJECT_ID || 'default-project-id';
 
-// Create wallets config with fallback
-const { wallets } = getDefaultWallets({
-  appName: 'NetZero Yield',
-  projectId: projectId,
-  chains: [raylsDevnet],
-});
+// Create wallets config with fallback - only if projectId is valid
+let walletsConfig;
+try {
+  const wallets = getDefaultWallets({
+    appName: 'NetZero Yield',
+    projectId: projectId,
+    chains: [raylsDevnet],
+  });
+  walletsConfig = wallets;
+} catch (error) {
+  console.warn('RainbowKit wallet configuration failed:', error);
+  walletsConfig = { wallets: [] };
+}
 
 const config = createConfig({
   chains: [raylsDevnet],
@@ -25,7 +32,9 @@ const config = createConfig({
     [raylsDevnet.id]: http(),
   },
   ssr: true,
-  connectors: wallets.map((w) => w.connector),
+  ...(walletsConfig.wallets.length > 0 && {
+    connectors: walletsConfig.wallets.map((w) => w.connector),
+  }),
 });
 
 const queryClient = new QueryClient();
