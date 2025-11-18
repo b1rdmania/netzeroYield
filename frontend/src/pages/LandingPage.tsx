@@ -126,11 +126,23 @@ export const LandingPage: React.FC = () => {
         </section>
 
         {/* ESG Icons Section */}
-        <section className="esg-icons-section" style={{ padding: '64px 0', background: 'linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%)' }}>
-          <div className="container">
+        <section className="esg-icons-section" style={{ padding: '64px 0', background: 'linear-gradient(135deg, rgba(2, 44, 34, 0.8) 0%, rgba(6, 78, 59, 0.6) 100%)', position: 'relative', overflow: 'hidden' }}>
+          <div style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            backgroundImage: `url('https://img.icons8.com/?id=794&format=png&size=80&color=059669'), url('https://img.icons8.com/?id=39764&format=png&size=60&color=059669')`,
+            backgroundRepeat: 'repeat',
+            backgroundSize: '200px 200px, 150px 150px',
+            opacity: 0.05,
+            pointerEvents: 'none'
+          }} />
+          <div className="container" style={{ position: 'relative', zIndex: 1 }}>
             <motion.h2 
               className="section-title"
-              style={{ color: '#065f46', marginBottom: '32px' }}
+              style={{ color: '#f59e0b', marginBottom: '32px' }}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -172,31 +184,33 @@ export const LandingPage: React.FC = () => {
                     display: 'flex',
                     gap: '20px',
                     padding: '24px',
-                    background: '#f8fafc',
+                    background: 'rgba(15, 26, 19, 0.6)',
                     borderRadius: '12px',
-                    border: '1px solid #e2e8f0',
-                    alignItems: 'center'
+                    border: '1px solid rgba(245, 158, 11, 0.2)',
+                    alignItems: 'center',
+                    backdropFilter: 'blur(10px)'
                   }}
                 >
                   <div style={{
                     width: '40px',
                     height: '40px',
                     borderRadius: '50%',
-                    background: 'linear-gradient(135deg, #059669, #10b981)',
-                    color: 'white',
+                    background: 'linear-gradient(135deg, #f59e0b, #d97706)',
+                    color: '#022c22',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
                     fontWeight: 700,
-                    flexShrink: 0
+                    flexShrink: 0,
+                    boxShadow: '0 0 20px rgba(245, 158, 11, 0.4)'
                   }}>
                     {step.id}
                   </div>
                   <div style={{ flex: 1 }}>
-                    <h3 style={{ fontSize: '1.125rem', fontWeight: 600, color: '#1e293b', marginBottom: '4px' }}>
+                    <h3 style={{ fontSize: '1.125rem', fontWeight: 600, color: '#f59e0b', marginBottom: '4px' }}>
                       {step.label}
                     </h3>
-                    <p style={{ fontSize: '0.875rem', color: '#64748b', margin: 0 }}>
+                    <p style={{ fontSize: '0.875rem', color: '#a7f3d0', margin: 0 }}>
                       {step.tooltip}
                     </p>
                   </div>
