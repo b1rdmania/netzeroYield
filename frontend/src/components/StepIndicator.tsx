@@ -110,7 +110,7 @@ export const StepIndicator: React.FC<StepIndicatorProps> = ({ title, steps }) =>
         .step-circle {
           width: 3rem;
           height: 3rem;
-          background: linear-gradient(to right, #635BFF, #00C6FF);
+          background: linear-gradient(to right, #059669, #10b981);
           border-radius: 50%;
           display: flex;
           align-items: center;
@@ -118,7 +118,7 @@ export const StepIndicator: React.FC<StepIndicatorProps> = ({ title, steps }) =>
           color: white;
           font-weight: bold;
           font-size: 0.875rem;
-          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 6px rgba(5, 150, 105, 0.2);
           cursor: pointer;
           min-height: 44px; /* iOS touch target */
           min-width: 44px;
@@ -166,7 +166,7 @@ export const StepIndicator: React.FC<StepIndicatorProps> = ({ title, steps }) =>
         
         .progress-bar {
           height: 100%;
-          background: linear-gradient(to right, #635BFF, #00C6FF);
+          background: linear-gradient(to right, #059669, #10b981);
         }
         
         /* Mobile Responsive Styles */
