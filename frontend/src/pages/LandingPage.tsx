@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { StepIndicator } from '../components/StepIndicator';
+import { ESGIconSet } from '../components/ESGIcons';
 import './LandingPage.css';
 
 export const LandingPage: React.FC = () => {
@@ -68,7 +69,14 @@ export const LandingPage: React.FC = () => {
 
       <header className="landing-header">
         <div className="container header-content">
-          <div className="logo">vS Vault</div>
+          <div className="logo" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <img 
+              src="https://img.icons8.com/?id=794&format=png&size=32" 
+              alt="Leaf" 
+              style={{ filter: 'brightness(0) saturate(100%) invert(48%) sepia(79%) saturate(2476%) hue-rotate(130deg) brightness(118%) contrast(119%)' }}
+            />
+            NetZero Yield
+          </div>
           <Link to="/app" className="button-primary">
             Launch App
           </Link>
@@ -87,10 +95,10 @@ export const LandingPage: React.FC = () => {
                 transition={{ duration: 0.8 }}
               >
                 <h1 className="hero-title-modern">
-                  Unlock liquidity today, 1:1 S tomorrow.
+                  Net-Zero Institutional Fund Vault
                 </h1>
                 <p className="hero-subtitle-modern">
-                  Deposit your Sonic fNFT → mint vS → trade or farm right away.
+                  Accredited-investor gated • Automated carbon offsetting • ESG-compliant from day one
                 </p>
                 <div className="hero-buttons-modern">
                   <Link to="/app" className="button-primary-modern">
@@ -148,12 +156,35 @@ export const LandingPage: React.FC = () => {
           </div>
         </section>
 
+        {/* ESG Icons Section */}
+        <section className="esg-icons-section" style={{ padding: '64px 0', background: 'linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%)' }}>
+          <div className="container">
+            <motion.h2 
+              className="section-title"
+              style={{ color: '#065f46', marginBottom: '32px' }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              ESG-First Institutional Vault
+            </motion.h2>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+            >
+              <ESGIconSet />
+            </motion.div>
+          </div>
+        </section>
+
         {/* Key Benefits - Animated Cards */}
         <section className="benefits-section-modern" style={{ color: '#1a1a1a', backgroundColor: '#f8fafc' }}>
           <div className="container">
             <motion.h2 
               className="section-title"
-              style={{ color: '#1e293b' }}
+              style={{ color: '#065f46' }}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -168,12 +199,12 @@ export const LandingPage: React.FC = () => {
               viewport={{ once: true }}
             >
               {[
-                { emoji: "⚡", title: "Immediate Liquidity", text: "Unlock full face value on day 0." },
-                { emoji: "⚖️", title: "Fair Discount", text: "Market sets the time price, not us." },
-                { emoji: "🔥", title: "Zero Penalty Burns", text: "Vault waits for 0% burn window." },
-                { emoji: "🧩", title: "DeFi Ready", text: "Pure ERC-20 plugs into any Sonic pool." },
-                { emoji: "🛡️", title: "No Rug Risk", text: "Upgrades require multisig approval and a public timelock (12h delay for upgrades). No single admin." },
-                { emoji: "🎯", title: "1:1 Redemption", text: "Every vS is backed by S after harvest." }
+                { emoji: "🌱", title: "Net-Zero Carbon", text: "Automatic carbon offsetting ensures ESG compliance from day one." },
+                { emoji: "🔒", title: "Accredited Investors Only", text: "Rayls identity gating ensures institutional-grade access control." },
+                { emoji: "💚", title: "ESG Compliant", text: "Real-time carbon footprint tracking and offset verification." },
+                { emoji: "📊", title: "Transparent Metrics", text: "On-chain ESG metrics: footprint, offsets, and net-zero status." },
+                { emoji: "🛡️", title: "Governance Protected", text: "Upgrades require multisig approval and a public timelock (12h delay)." },
+                { emoji: "🎯", title: "Liquid Fund Shares", text: "Convert illiquid VC fund positions into tradeable ERC-20 tokens." }
               ].map((benefit, index) => (
                 <motion.div
                   key={index}
@@ -321,9 +352,9 @@ export const LandingPage: React.FC = () => {
               Launch App
             </Link>
           </div>
-          <p>&copy; 2025 vS Vault. Ready to turn waiting into doing.</p>
+          <p>&copy; 2025 NetZero Yield. ESG-compliant institutional DeFi.</p>
           <p style={{ fontSize: '0.875rem', color: '#64748b', marginTop: '8px' }}>
-            Open-source & community-run • MIT licence • Built for Sonic DeFi
+            Open-source & community-run • MIT licence • Built for Rayls Hackathon
           </p>
         </div>
       </footer>
