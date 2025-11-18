@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { WagmiProvider, createConfig, http } from 'wagmi';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { RainbowKitProvider, getDefaultWallets } from '@rainbow-me/rainbowkit';
-import { sonicMainnet, sonicTestnet } from './config/chains';
+import { raylsDevnet } from './config/chains';
 import { AppShell } from './components/layout/AppShell';
 import { LandingPage } from './pages/LandingPage';
 import { WhitepaperPage } from './pages/WhitepaperPage';
@@ -17,11 +17,9 @@ if (!projectId) {
 }
 
 const config = createConfig({
-  chains: [ sonicMainnet],
-  // chains: [sonicTestnet, sonicMainnet],
-  // [sonicTestnet.id]: http(),
+  chains: [raylsDevnet],
   transports: {
-    [sonicMainnet.id]: http(),
+    [raylsDevnet.id]: http(),
   },
   ssr: true,
 });

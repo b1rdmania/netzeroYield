@@ -9,6 +9,8 @@ via_ir = true
 ffi = true  # Enable FFI for auto-verification in scripts
 
 [rpc_endpoints]
+# Rayls Networks
+rayls_devnet = "https://devnet-rpc.rayls.com"
 # Sonic Networks
 sonic_testnet = "https://rpc.blaze.soniclabs.com"
 sonic_mainnet = "https://rpc.soniclabs.com"
