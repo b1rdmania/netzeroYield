@@ -18,11 +18,11 @@ export const LandingPage: React.FC = () => {
   }, []);
 
   const stepData = [
-    { id: 1, label: "Verify Accreditation", tooltip: "Connect wallet with Rayls identity. Only accredited investors can proceed." },
-    { id: 2, label: "Deposit Fund Share", tooltip: "Deposit your VC fund share NFT (ERC-721) into the vault." },
-    { id: 3, label: "Receive Fund Tokens", tooltip: "Vault mints liquid ERC-20 Fund tokens representing your position (99% after 1% fee)." },
-    { id: 4, label: "Trade & Deploy", tooltip: "Use Fund tokens in DeFi: trade, LP, lend, or farm. All while maintaining net-zero status." },
-    { id: 5, label: "Redeem Anytime", tooltip: "Burn Fund tokens to redeem your original fund share NFT (minus 2% exit fee)." }
+    { id: 1, label: "Deposit Assets", tooltip: "Deposit USDC or other stablecoins into the ERC-4626 vault. Accredited investors only (via Rayls identity)." },
+    { id: 2, label: "Generate Yield", tooltip: "Vault automatically deploys assets to yield strategies (lending, LP, etc.) generating returns." },
+    { id: 3, label: "Auto-Offset", tooltip: "When yield is harvested, vault automatically calculates carbon footprint and purchases verified offsets." },
+    { id: 4, label: "Net-Zero Yield", tooltip: "You receive yield with ESG compliance. All carbon emissions are automatically offset to maintain net-zero status." },
+    { id: 5, label: "Withdraw Anytime", tooltip: "Redeem your vault shares for underlying assets plus accrued yield, all while maintaining net-zero compliance." }
   ];
 
   const benefitVariants = {
@@ -60,9 +60,9 @@ export const LandingPage: React.FC = () => {
         >
           <span style={{ margin: '0 0.5rem' }}>🌱 Net-Zero Carbon</span>
           <span style={{ margin: '0 0.5rem' }}>|</span>
-          <span style={{ margin: '0 0.5rem' }}>🔒 Accredited Investors Only</span>
+          <span style={{ margin: '0 0.5rem' }}>🔒 Accredited Investors</span>
           <span style={{ margin: '0 0.5rem' }}>|</span>
-          <span style={{ margin: '0 0.5rem' }}>💚 ESG-Compliant from Day One</span>
+          <span style={{ margin: '0 0.5rem' }}>💚 ESG-Compliant Yield</span>
         </motion.div>
       )}
 
@@ -83,7 +83,7 @@ export const LandingPage: React.FC = () => {
       </header>
 
       <main>
-        {/* Hero Section - Full Bleed Gradient */}
+        {/* Hero Section */}
         <section className="hero-section-gradient">
           <div className="container">
             <div className="hero-grid">
@@ -94,10 +94,10 @@ export const LandingPage: React.FC = () => {
                 transition={{ duration: 0.8 }}
               >
                 <h1 className="hero-title-modern">
-                  Net-Zero Institutional Fund Vault
+                  DeFi Yield with Automatic ESG Compliance
                 </h1>
                 <p className="hero-subtitle-modern">
-                  Accredited-investor gated • Automated carbon offsetting • ESG-compliant from day one • Built on Rayls
+                  Standard ERC-4626 vault that generates yield and automatically purchases carbon offsets. Net-zero from day one. Built on Rayls.
                 </p>
                 <div className="hero-buttons-modern">
                   <Link to="/app" className="button-primary-modern">
@@ -118,7 +118,7 @@ export const LandingPage: React.FC = () => {
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
                 <div className="flow-diagram">
-                  <div className="flow-text">Fund Share → Vault → Fund Token → DeFi</div>
+                  <div className="flow-text">Deposit → Yield → Auto-Offset → Net-Zero</div>
                 </div>
               </motion.div>
             </div>
@@ -135,7 +135,7 @@ export const LandingPage: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              ESG-First Institutional Vault
+              ESG-First Yield Vault
             </motion.h2>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -148,7 +148,7 @@ export const LandingPage: React.FC = () => {
           </div>
         </section>
 
-        {/* How It Works - Step Indicator */}
+        {/* How It Works */}
         <section className="stepper-section" style={{ color: '#1a1a1a', backgroundColor: 'white' }}>
           <div className="container">
             <motion.h2 
@@ -206,7 +206,7 @@ export const LandingPage: React.FC = () => {
           </div>
         </section>
 
-        {/* Key Benefits - Animated Cards */}
+        {/* Key Benefits */}
         <section className="benefits-section-modern" style={{ color: '#1a1a1a', backgroundColor: '#f8fafc' }}>
           <div className="container">
             <motion.h2 
@@ -216,7 +216,7 @@ export const LandingPage: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              Key Benefits
+              Why NetZero Yield?
             </motion.h2>
             <motion.div 
               className="benefits-grid-modern"
@@ -226,12 +226,12 @@ export const LandingPage: React.FC = () => {
               viewport={{ once: true }}
             >
               {[
-                { emoji: "🌱", title: "Net-Zero Carbon", text: "Automatic carbon offsetting ensures ESG compliance from day one. Every yield harvest triggers offset purchases." },
-                { emoji: "🔒", title: "Accredited Investors Only", text: "Rayls identity gating ensures institutional-grade access control. Only verified accredited investors can deposit." },
-                { emoji: "💚", title: "ESG Compliant", text: "Real-time carbon footprint tracking and offset verification. On-chain ESG metrics for transparency." },
-                { emoji: "📊", title: "Transparent Metrics", text: "On-chain ESG metrics: footprint, offsets, and net-zero status. Fully auditable and verifiable." },
-                { emoji: "🛡️", title: "Governance Protected", text: "Upgrades require multisig approval and a public timelock (12h delay). No single point of failure." },
-                { emoji: "🎯", title: "Liquid Fund Shares", text: "Convert illiquid VC fund positions into tradeable ERC-20 tokens. Access DeFi while maintaining fund exposure." }
+                { emoji: "🌱", title: "Automatic Net-Zero", text: "Every yield harvest automatically purchases carbon offsets. No manual compliance needed." },
+                { emoji: "📈", title: "DeFi Yields", text: "Access superior DeFi returns (5-15% APY) while maintaining ESG compliance." },
+                { emoji: "🔒", title: "Accredited Investor Gating", text: "Optional Rayls identity verification ensures institutional-grade access control." },
+                { emoji: "📊", title: "Transparent Metrics", text: "On-chain ESG metrics: carbon footprint, offsets purchased, net-zero status. Fully auditable." },
+                { emoji: "🧩", title: "ERC-4626 Standard", text: "Composable with all DeFi protocols. Standard interface for maximum interoperability." },
+                { emoji: "⚡", title: "Sub-Second Offsets", text: "Rayls' deterministic finality enables real-time carbon offset purchases on every harvest." }
               ].map((benefit, index) => (
                 <motion.div
                   key={index}
@@ -249,7 +249,7 @@ export const LandingPage: React.FC = () => {
           </div>
         </section>
 
-        {/* Why Rayls - Icon Cards */}
+        {/* Why Rayls */}
         <section className="why-sonic-modern" style={{ color: '#1a1a1a' }}>
           <div className="container">
             <motion.h2 
@@ -259,7 +259,7 @@ export const LandingPage: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              Why Rayls?
+              Built for Rayls
             </motion.h2>
             <div className="sonic-benefits-grid">
               {[
@@ -297,7 +297,7 @@ export const LandingPage: React.FC = () => {
           </div>
         </section>
 
-        {/* FAQ with Icons */}
+        {/* FAQ */}
         <section className="faq-section-modern" style={{ color: '#1a1a1a' }}>
           <div className="container">
             <motion.h2 
@@ -312,39 +312,39 @@ export const LandingPage: React.FC = () => {
             <div className="faq-accordion-modern">
               <details open>
                 <summary>
+                  How does automatic carbon offsetting work?
+                </summary>
+                <p>When yield is harvested from the vault's strategies, the protocol automatically calculates the carbon footprint and purchases verified carbon offsets. This happens in real-time thanks to Rayls' sub-second finality.</p>
+              </details>
+              <details>
+                <summary>
                   Who can use this vault?
                 </summary>
-                <p>Only accredited investors verified through Rayls' identity registry. The vault checks accreditation on-chain before allowing deposits.</p>
+                <p>By default, anyone can deposit. However, the vault can be configured to require accredited investor verification via Rayls' identity registry for institutional compliance.</p>
               </details>
               <details>
                 <summary>
-                  How does carbon offsetting work?
+                  What yield strategies does the vault use?
                 </summary>
-                <p>When yield is harvested, the vault automatically calculates the carbon footprint and purchases verified carbon offsets. This happens in real-time thanks to Rayls' sub-second finality.</p>
+                <p>The vault can deploy to any yield-generating strategy: lending protocols, liquidity pools, other ERC-4626 vaults, or RWA strategies. The strategy is upgradeable via governance.</p>
               </details>
               <details>
                 <summary>
-                  What are the fees?
+                  How much does carbon offsetting cost?
                 </summary>
-                <p>1% deposit fee (mint), 2% redemption fee. All fee changes require multisig approval and a 12-hour timelock.</p>
+                <p>Carbon offset costs are typically 0.25-0.5% of yield generated. The vault automatically deducts this from yield before distribution, ensuring net-zero compliance without manual intervention.</p>
               </details>
               <details>
                 <summary>
-                  Can I redeem my fund share?
+                  Is this ERC-4626 compliant?
                 </summary>
-                <p>Yes, anytime. Burn your Fund tokens to redeem your original fund share NFT. The vault maintains a 1:1 backing ratio.</p>
-              </details>
-              <details>
-                <summary>
-                  Where's the code?
-                </summary>
-                <p>Open-source on GitHub: <a href="https://github.com/b1rdmania/netzeroYield" target="_blank" rel="noopener noreferrer" style={{ color: '#059669', textDecoration: 'underline' }}>netzeroYield</a>. Contracts are upgradeable with governance controls.</p>
+                <p>Yes. The vault implements the full ERC-4626 standard, making it composable with all DeFi protocols. You can deposit, withdraw, and use vault shares in any ERC-4626 compatible application.</p>
               </details>
             </div>
           </div>
         </section>
 
-        {/* Final CTA - Gradient Footer */}
+        {/* Final CTA */}
         <section className="final-cta-gradient">
           <div className="container">
             <motion.div
@@ -353,10 +353,10 @@ export const LandingPage: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <h2 className="cta-title">Ready to Go Net-Zero?</h2>
-              <p className="cta-subtitle">Connect wallet → verify accreditation → deposit fund share → get liquid tokens.</p>
+              <h2 className="cta-title">Ready for Net-Zero Yield?</h2>
+              <p className="cta-subtitle">Deposit assets → Generate yield → Automatic offsets → ESG compliance</p>
               <p className="cta-tagline">
-                <em>ESG-compliant DeFi for institutional capital.</em>
+                <em>DeFi yields with automatic ESG compliance. No compromises.</em>
               </p>
               <Link to="/app" className="button-primary-large">
                 Launch App
@@ -377,7 +377,7 @@ export const LandingPage: React.FC = () => {
               Launch App
             </Link>
           </div>
-          <p>&copy; 2025 NetZero Yield. ESG-compliant institutional DeFi.</p>
+          <p>&copy; 2025 NetZero Yield. ESG-compliant DeFi yields.</p>
           <p style={{ fontSize: '0.875rem', color: '#64748b', marginTop: '8px' }}>
             Open-source & community-run • MIT licence • Built for Rayls Hackathon
           </p>
