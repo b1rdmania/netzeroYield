@@ -98,10 +98,19 @@ export const LandingPage: React.FC = () => {
                 transition={{ duration: 0.8 }}
               >
                 <h1 className="hero-title-modern">
-                  DeFi Yield with Automatic ESG Compliance
+                  NetZero Yield
                 </h1>
+                <p className="hero-subtitle-modern" style={{ fontSize: '18px', fontWeight: 600, marginBottom: '24px', color: '#ffffff' }}>
+                  ESG-Compliant DeFi Yield Vault
+                </p>
                 <p className="hero-subtitle-modern">
                   Standard ERC-4626 vault that generates yield and automatically purchases carbon offsets. Net-zero from day one. Built on Rayls.
+                </p>
+                <p className="hero-subtitle-modern" style={{ marginTop: '16px' }}>
+                  In partnership with Rayls' identity layer, we provide compliant, secure infrastructure that connects institutional capital with DeFi yield opportunities while maintaining automatic ESG compliance.
+                </p>
+                <p className="hero-subtitle-modern" style={{ marginTop: '16px' }}>
+                  Our vault routes deposits through accredited-investor verification while automatically offsetting carbon emissions on every yield harvest. This combination of regulatory compliance and environmental responsibility enables institutions to access DeFi yields with full ESG alignment.
                 </p>
                 <div className="hero-buttons-modern">
                   <Link to="/app" className="button-primary-modern">
@@ -129,35 +138,13 @@ export const LandingPage: React.FC = () => {
           </div>
         </section>
 
-        {/* ESG Icons Section */}
-        <section className="esg-icons-section" style={{ padding: '64px 0', background: 'linear-gradient(135deg, rgba(2, 44, 34, 0.8) 0%, rgba(6, 78, 59, 0.6) 100%)', position: 'relative', overflow: 'hidden' }}>
-          <div style={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            backgroundImage: `url('https://img.icons8.com/?id=794&format=png&size=80&color=059669'), url('https://img.icons8.com/?id=39764&format=png&size=60&color=059669')`,
-            backgroundRepeat: 'repeat',
-            backgroundSize: '200px 200px, 150px 150px',
-            opacity: 0.05,
-            pointerEvents: 'none'
-          }} />
-          <div className="container" style={{ position: 'relative', zIndex: 1 }}>
-            <motion.h2 
-              className="section-title"
-              style={{ color: '#f59e0b', marginBottom: '32px' }}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-            >
-              ESG-First Yield Vault
-            </motion.h2>
+        {/* ESG Icons Section - Minimal */}
+        <section className="esg-icons-section">
+          <div className="container">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
             >
               <ESGIconSet />
             </motion.div>
@@ -176,45 +163,46 @@ export const LandingPage: React.FC = () => {
             >
               How It Works
             </motion.h2>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', maxWidth: '800px', margin: '0 auto' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', maxWidth: '700px' }}>
               {stepData.map((step, index) => (
                 <motion.div
                   key={step.id}
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
+                  transition={{ delay: index * 0.05 }}
                   style={{
                     display: 'flex',
-                    gap: '20px',
-                    padding: '24px',
-                    background: 'rgba(15, 26, 19, 0.6)',
-                    borderRadius: '12px',
-                    border: '1px solid rgba(245, 158, 11, 0.2)',
-                    alignItems: 'center',
-                    backdropFilter: 'blur(10px)'
+                    gap: '16px',
+                    padding: '20px',
+                    background: 'rgba(15, 26, 19, 0.3)',
+                    borderRadius: '4px',
+                    border: '1px solid rgba(245, 158, 11, 0.1)',
+                    alignItems: 'flex-start'
                   }}
                 >
                   <div style={{
-                    width: '40px',
-                    height: '40px',
+                    width: '24px',
+                    height: '24px',
                     borderRadius: '50%',
-                    background: 'linear-gradient(135deg, #f59e0b, #d97706)',
-                    color: '#022c22',
+                    background: 'transparent',
+                    border: '1px solid rgba(245, 158, 11, 0.5)',
+                    color: '#f59e0b',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    fontWeight: 700,
+                    fontWeight: 400,
+                    fontSize: '12px',
                     flexShrink: 0,
-                    boxShadow: '0 0 20px rgba(245, 158, 11, 0.4)'
+                    marginTop: '2px'
                   }}>
                     {step.id}
                   </div>
                   <div style={{ flex: 1 }}>
-                    <h3 style={{ fontSize: '1.125rem', fontWeight: 600, color: '#f59e0b', marginBottom: '4px' }}>
+                    <h3 style={{ fontSize: '14px', fontWeight: 600, color: '#ffffff', marginBottom: '6px', letterSpacing: '0.2px' }}>
                       {step.label}
                     </h3>
-                    <p style={{ fontSize: '0.875rem', color: '#a7f3d0', margin: 0 }}>
+                    <p style={{ fontSize: '14px', color: 'rgba(255, 255, 255, 0.7)', margin: 0, lineHeight: '1.6' }}>
                       {step.tooltip}
                     </p>
                   </div>
@@ -244,11 +232,11 @@ export const LandingPage: React.FC = () => {
             >
               {[
                 { emoji: "🌱", title: "Automatic Net-Zero", text: "Every yield harvest automatically purchases carbon offsets. No manual compliance needed." },
-                { emoji: "📈", title: "DeFi Yields", text: "Access superior DeFi returns (5-15% APY) while maintaining ESG compliance." },
+                { emoji: "📈", title: "DeFi Yields", text: "Access superior DeFi returns while maintaining ESG compliance." },
                 { emoji: "🔒", title: "Accredited Investor Gating", text: "Optional Rayls identity verification ensures institutional-grade access control." },
-                { emoji: "📊", title: "Transparent Metrics", text: "On-chain ESG metrics: carbon footprint, offsets purchased, net-zero status. Fully auditable." },
+                { emoji: "📊", title: "Transparent Metrics", text: "On-chain ESG metrics: carbon footprint, offsets purchased, net-zero status." },
                 { emoji: "🧩", title: "ERC-4626 Standard", text: "Composable with all DeFi protocols. Standard interface for maximum interoperability." },
-                { emoji: "⚡", title: "Sub-Second Offsets", text: "Rayls' deterministic finality enables real-time carbon offset purchases on every harvest." }
+                { emoji: "⚡", title: "Sub-Second Offsets", text: "Rayls' deterministic finality enables real-time carbon offset purchases." }
               ].map((benefit, index) => (
                 <motion.div
                   key={index}

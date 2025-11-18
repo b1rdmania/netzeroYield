@@ -16,14 +16,14 @@ export const ESGIcon: React.FC<ESGIconProps> = ({ iconUrl, alt, size = 64, class
       height={size} 
       className={className}
       style={{ 
-        filter: 'drop-shadow(0 4px 8px rgba(245, 158, 11, 0.4)) brightness(1.1)',
-        transition: 'transform 300ms ease'
+        filter: 'brightness(0) invert(1) opacity(0.8)',
+        transition: 'opacity 200ms ease'
       }}
       onMouseEnter={(e) => {
-        e.currentTarget.style.transform = 'scale(1.1)';
+        e.currentTarget.style.opacity = '1';
       }}
       onMouseLeave={(e) => {
-        e.currentTarget.style.transform = 'scale(1)';
+        e.currentTarget.style.opacity = '0.8';
       }}
     />
   );
@@ -54,7 +54,7 @@ export const ESGIconSet: React.FC = () => {
   ];
 
   return (
-    <div style={{ display: 'flex', gap: '24px', justifyContent: 'center', flexWrap: 'wrap', alignItems: 'center' }}>
+    <div style={{ display: 'flex', gap: '32px', justifyContent: 'center', flexWrap: 'wrap', alignItems: 'center' }}>
       {icons.map((icon, index) => (
         <div key={index} style={{ 
           textAlign: 'center', 
@@ -62,26 +62,23 @@ export const ESGIconSet: React.FC = () => {
           flexDirection: 'column', 
           alignItems: 'center', 
           gap: '8px',
-          padding: '16px',
-          background: 'rgba(15, 26, 19, 0.4)',
-          borderRadius: '12px',
-          border: '1px solid rgba(245, 158, 11, 0.2)',
-          backdropFilter: 'blur(10px)',
-          transition: 'all 300ms ease'
+          padding: '20px',
+          background: 'rgba(15, 26, 19, 0.3)',
+          borderRadius: '4px',
+          border: '1px solid rgba(245, 158, 11, 0.1)',
+          transition: 'all 200ms ease'
         }}
         onMouseEnter={(e) => {
-          e.currentTarget.style.transform = 'translateY(-4px)';
-          e.currentTarget.style.borderColor = 'rgba(245, 158, 11, 0.4)';
-          e.currentTarget.style.boxShadow = '0 8px 20px rgba(245, 158, 11, 0.2)';
+          e.currentTarget.style.borderColor = 'rgba(245, 158, 11, 0.3)';
+          e.currentTarget.style.background = 'rgba(15, 26, 19, 0.5)';
         }}
         onMouseLeave={(e) => {
-          e.currentTarget.style.transform = 'translateY(0)';
-          e.currentTarget.style.borderColor = 'rgba(245, 158, 11, 0.2)';
-          e.currentTarget.style.boxShadow = 'none';
+          e.currentTarget.style.borderColor = 'rgba(245, 158, 11, 0.1)';
+          e.currentTarget.style.background = 'rgba(15, 26, 19, 0.3)';
         }}
         >
-          <ESGIcon iconUrl={icon.url} alt={icon.alt} size={64} />
-          <span style={{ fontSize: '0.875rem', color: '#f59e0b', fontWeight: 600 }}>{icon.label}</span>
+          <ESGIcon iconUrl={icon.url} alt={icon.alt} size={48} />
+          <span style={{ fontSize: '12px', color: 'rgba(255, 255, 255, 0.8)', fontWeight: 400, letterSpacing: '0.5px' }}>{icon.label}</span>
         </div>
       ))}
     </div>
